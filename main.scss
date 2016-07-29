@@ -1,0 +1,127 @@
+body {
+    margin: 1cm;
+    width: 27.5cm;
+    position: relative;
+    & > a {
+      position: absolute;
+      right: 10rem;
+      @media print {
+        display: none;
+      }
+    }
+    & > div {
+        display: flex;
+        & > div {
+            flex: 1;
+            text-align: center;
+            padding: 7rem 0;
+            font-size: 0.8rem;
+        }
+    }
+}
+header {
+    h2 {
+      font-family: Open Sans, sans-serif;
+        float: right;
+    }
+}
+table:first-of-type {
+    padding: 2rem 0;
+    tr td:first-child {
+        text-align: right;
+        font-style: italic;
+    }
+}
+table:last-of-type {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Roboto, sans-serif;
+    tbody {
+        // border: 1px solid blue;
+        tr {
+            height: 1.5rem;
+            &:nth-child(odd) td:not(:first-child) {
+                background: #afaeff;
+            }
+            &:last-child td:nth-child(n+2) {
+              border-bottom: 2px solid black;
+            }
+        }
+        td {
+          border: 0 solid blue;
+          &:first-child {
+            text-align: right;
+            padding-right: 0.3rem;
+            border-width: 0 1px 0 0;
+          }
+          &:nth-child(3) {
+            border-width: 0 1px;
+          }
+          &:nth-child(n+4) {
+            text-align: right;
+          }
+          &:last-child {
+            border-width: 0 1px 0 0;
+          }
+
+        }
+    }
+    thead {
+        th {
+            padding: 1rem 0.2rem;
+            text-align: left;
+            border: 0 solid blue;
+            &:nth-child(2) {
+                border-width: 1px 0 1px 1px;
+            }
+            &:nth-child(4) {
+                border-width: 1px;
+            }
+            &:nth-child(3),
+            &:nth-child(5),
+            &:nth-child(6) {
+                border-width: 1px 0;
+            }
+            &:nth-child(7) {
+                border-width: 1px 1px 1px 0;
+            }
+        }
+    }
+    tfoot td {
+        text-align: right;
+    }
+}
+footer {
+    font-size: 0.7rem;
+    p {
+        span {
+            text-decoration: underline;
+        }
+    }
+    > span {
+      position: absolute;
+      transform: rotate(-90deg);
+      right: 0;
+      bottom: 1rem;
+    }
+    > div {
+        text-align: center;
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        &:before {
+            content: '';
+            border-top: 1px solid blue;
+            width: 70%;
+            left: 1rem;
+            align-self: center;
+        }
+        & > span {
+            padding: 1rem;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}

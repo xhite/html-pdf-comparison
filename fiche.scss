@@ -1,0 +1,36 @@
+body {
+    margin: 1cm;
+    width: 27.5cm;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    & > .left {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        & > div {
+            padding: 2rem 0;
+        }
+    }
+    & > div:last-child {
+        flex: 2;
+        display: flex;
+        span {
+            font-weight: bold;
+        }
+        h3 {
+            text-transform: uppercase;
+            margin: 0;
+        }
+        h4 {
+            font-weight: lighter;
+            margin: 0;
+        }
+        & > div:first-child {
+            align-self: flex-end;
+            padding: 3rem 2rem;
+        }
+    }
+}

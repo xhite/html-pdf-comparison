@@ -1,0 +1,27 @@
+{
+  "name": "html-pdf-comparison",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --source-map true --output-style compressed main.scss main.css",
+    "start": "concurrently 'sass --watch .' 'lite-server'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhite/html-pdf-comparison.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xhite/html-pdf-comparison/issues"
+  },
+  "homepage": "https://github.com/xhite/html-pdf-comparison#readme",
+  "dependencies": {
+    "light-server": "^1.1.7"
+  },
+  "devDependencies": {
+    "node-sass": "^3.8.0"
+  }
+}
