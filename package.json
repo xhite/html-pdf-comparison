@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/xhite/html-pdf-comparison#readme",
   "dependencies": {
-    "light-server": "^1.1.7"
+    "electron-pdf": "^0.10.0",
+    "jspdf": "^1.2.61",
+    "light-server": "^1.1.7",
+    "phantomjs-pdf": "^0.1.2"
   },
   "devDependencies": {
     "node-sass": "^3.8.0"
