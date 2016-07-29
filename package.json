@@ -18,10 +18,8 @@
     "url": "https://github.com/xhite/html-pdf-comparison/issues"
   },
   "homepage": "https://github.com/xhite/html-pdf-comparison#readme",
-  "dependencies": {
-    "light-server": "^1.1.7"
-  },
   "devDependencies": {
+    "light-server": "^1.1.7",
     "node-sass": "^3.8.0"
   }
 }
