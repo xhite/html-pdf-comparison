@@ -25,6 +25,7 @@
     "phantomjs-pdf": "^0.1.2"
   },
   "devDependencies": {
+    "light-server": "^1.1.7",
     "node-sass": "^3.8.0"
   }
 }

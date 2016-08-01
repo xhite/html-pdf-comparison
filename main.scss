@@ -1,127 +1,182 @@
+// Variables
+$white: #fff;
+$black: #000;
+$blue: #00b0f0;
+$bgTableEven: transparentize($blue, .75);
+$tableBorder: $blue;
+// Global
 body {
-    margin: 1cm;
-    width: 27.5cm;
-    position: relative;
-    & > a {
-      position: absolute;
-      right: 10rem;
-      @media print {
-        display: none;
+  // Simulate A4
+//   margin: 1.5cm 1cm;
+//   height: 27.7cm; // 29.7 - 2 * 1cm
+//   width: 18cm; // 21 - 2 * 1.5cm
+//   border: thin dotted red;
+    padding: .5rem;
+  font-size: 14px;
+}
+
+header {
+  h2 {
+    font-family: Open Sans, sans-serif;
+    line-height: calc(160px / 2);
+    float: right;
+    margin: 0 3rem 0 0;
+  }
+  img {
+    float: left;
+    height: 80px;
+  }
+}
+
+table.who {
+  clear: both;
+  padding: 2rem 0;
+  font-size: 110%;
+  tr td:first-child {
+    text-align: right;
+    font-style: italic;
+    &::after {
+      content: ' :';
+    }
+  }
+  .lastname {
+    text-transform: uppercase;
+  }
+}
+
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+
+  .date {
+    text-align: center;
+  }
+  .price {
+    text-align: right;
+    &::after {
+      content: ' €';
+    }
+  }
+  .total {
+    font-size: 120%;
+  }
+
+  thead {
+    tr {
+      th {
+        font-weight: normal;
+        padding: 4px;
+        text-align: left;
+        border: 0 solid $tableBorder;
+        &:nth-child(2) {
+            border-width: 1px 0 1px 1px;
+            text-align: center;
+        }
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(6) {
+            border-width: 1px 0;
+        }
+        &:nth-child(4) {
+            border-width: 1px;
+        }
+        &:nth-child(7) {
+            border-width: 1px 1px 1px 0;
+        }
       }
     }
-    & > div {
-        display: flex;
-        & > div {
-            flex: 1;
-            text-align: center;
-            padding: 7rem 0;
-            font-size: 0.8rem;
-        }
+  }
+  tbody {
+    tr {
+      height: 1.5rem;
+      &:nth-child(2n+1) {
+        background: $bgTableEven;
+      }
+      &:last-child td:nth-child(n+2) {
+        border-bottom: 2px solid black;
+      }
+      td:first-child {
+        border-right: thin solid $tableBorder;
+      }
+      td:last-child {
+        border-right: thin solid $tableBorder;
+      }
     }
-}
-header {
-    h2 {
-      font-family: Open Sans, sans-serif;
-        float: right;
-    }
-}
-table:first-of-type {
-    padding: 2rem 0;
-    tr td:first-child {
+    td {
+      border: 0 solid transparent;
+      color: transparentize($black, .2);
+      padding: 2px;
+      font-size: 10px;
+      &:first-child {
         text-align: right;
+        padding-right: 0.3rem;
+        border-width: 0 1px 0 0;
+        background-color: $white;
+        color: transparentize($black, .25);
         font-style: italic;
+      }
+      &:nth-child(4) {
+        border-width: 0 1px;
+      }
+      &:last-child {
+        border-width: 0 1px 0 0;
+      }
     }
-}
-table:last-of-type {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Roboto, sans-serif;
-    tbody {
-        // border: 1px solid blue;
-        tr {
-            height: 1.5rem;
-            &:nth-child(odd) td:not(:first-child) {
-                background: #afaeff;
-            }
-            &:last-child td:nth-child(n+2) {
-              border-bottom: 2px solid black;
-            }
-        }
-        td {
-          border: 0 solid blue;
-          &:first-child {
-            text-align: right;
-            padding: 0 0.3rem 0 0;
-            border-width: 0 1px 0 0;
-          }
-          &:nth-child(3) {
-            border-width: 0 1px;
-          }
-          &:nth-child(n+4) {
-            text-align: right;
-          }
-          &:last-child {
-            border-width: 0 1px 0 0;
-          }
-
+  }
+  tfoot {
+    tr:nth-child(2) {
+        td:nth-child(n+3) {
+            border-bottom: thin solid $blue;
         }
     }
-    thead {
-        th {
-            padding: 1rem 0.2rem;
-            text-align: left;
-            border: 0 solid blue;
-            &:nth-child(2) {
-                border-width: 1px 0 1px 1px;
-            }
-            &:nth-child(4) {
-                border-width: 1px;
-            }
-            &:nth-child(3),
-            &:nth-child(5),
-            &:nth-child(6) {
-                border-width: 1px 0;
-            }
-            &:nth-child(7) {
-                border-width: 1px 1px 1px 0;
-            }
-        }
+    tr:last-child td {
+        color: $black;
     }
-    tfoot td {
+    td {
         text-align: right;
+        color: transparentize($black, .2);
+    }
+  }
+}
+
+.signature {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    height: 6rem;
+    align-items: center;
+    small {
+        font-style: italic;
+        color: fade-out($black, .3)
     }
 }
+
 footer {
-    font-size: 0.7rem;
-    p {
-        span {
-            text-decoration: underline;
-        }
+    padding: .5rem;
+  position: fixed;
+  bottom: 0;
+  font-size: 6px;
+  text-align: justify;
+  p {
+    span {
+      text-decoration: underline;
     }
-    > span {
-      position: absolute;
-      transform: rotate(-90deg);
-      right: 0;
-      bottom: 1rem;
-    }
-    > div {
-        text-align: center;
-        width: 70%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        &:before {
-            content: '';
-            border-top: 1px solid blue;
-            width: 70%;
-            left: 1rem;
-            align-self: center;
-        }
-        & > span {
-            padding: 1rem;
-            span {
-                font-weight: bold;
-            }
-        }
-    }
+  }
+  hr {
+    width: 50%;
+    border-color: $blue;
+  }
+   &> div {
+    text-align: center;
+   }
+}
+
+.template {
+    position: fixed;
+    font-size: 8px;
+    transform: rotate(-90deg);
+    right: 0;
+    bottom: 4rem;
 }
