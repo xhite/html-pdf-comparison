@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass --source-map true --output-style compressed main.scss main.css",
-    "start": "concurrently 'sass --watch .' 'lite-server'"
+    "start": "concurrently 'sass --watch .' 'lite-server'",
+    "styles": "node-sass --source-map true --output-style compressed sheet/sheet.scss sheet/sheet.css",
+    "electron": "time electron-pdf svg.html svg.electron.pdf",
+    "athena": "time docker run --security-opt seccomp:unconfined --rm -v $(pwd):/converted/ arachnysdocker/athenapdf athenapdf sheet/sheet.html result/sheet.athena.pdf --no-portrait",
+    "athena:service": "docker run --security-opt seccomp:unconfined --env-file conf/athena.env -p 8080:8080 --rm -v $(pwd):/converted/ arachnysdocker/athenapdf-service",
+    "build": "npm run styles && node ./build.js | curl -s -o result/sheet.pdf -F file=@- 'localhost:8080/convert?auth=arachnys-weaver&landscape'"
   },
   "repository": {
     "type": "git",
@@ -22,9 +27,13 @@
     "electron-pdf": "^0.10.0",
     "jspdf": "^1.2.61",
     "light-server": "^1.1.7",
+    "nunjucks": "^2.4.2",
     "phantomjs-pdf": "^0.1.2"
   },
   "devDependencies": {
+    "inline-css": "^2.2.2",
+    "inline-resource": "^0.1.4",
+    "juice": "^2.0.0",
     "light-server": "^1.1.7",
     "node-sass": "^3.8.0"
   }

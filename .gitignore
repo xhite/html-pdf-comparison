@@ -1,4 +1,6 @@
 .sass-cache/
 *.css
 *.map
+*.pdf
+*.html
 node_modules/

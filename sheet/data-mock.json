@@ -1,0 +1,27 @@
+{
+  "labelImage": {
+      "url": "https://unsplash.it/200/400",
+      "alt": "placeholder"
+    },
+    "adress": [
+      { "line": "SAS Example" },
+      { "line": "23 Avenue Flex Box" },
+      { "line": "31000 Toulouse" },
+      { "line": "Tél: 05 55 55 55 55" },
+      { "line": "Tél: 05 55 55 55 55" },
+      { "line": "E-mail : contact@example.com" }
+    ],
+    "name": "Colombard Ugni Blanc",
+    "type": "Frais et Fruité",
+    "description": [
+      { "title": "Région", "content": "Sud Ouest France" },
+      { "title": "Appelation", "content": "IGP Côtes de Gascogne" },
+      { "title": "Terroir", "content": "Sablo-Limoneux et Argiles" },
+      { "title": "Cépages", "content": "80% Colombard 20% Ugni Blanc" },
+      { "title": "Potentiel de garde", "content": "À boire dans l'année" }
+    ],
+    "bottleImage": {
+      "url": "https://unsplash.it/300/600",
+      "alt": "placeholder"
+    }
+}
